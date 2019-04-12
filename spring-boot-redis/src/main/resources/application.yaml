@@ -4,7 +4,7 @@ spring:
   redis:
     host: redis.hocgin.dev
     port: 6379
-#    password: hocgin
+    password: hocgin
     timeout: 100ms
 logging:
   level:
