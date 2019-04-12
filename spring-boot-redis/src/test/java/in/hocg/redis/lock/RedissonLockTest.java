@@ -28,11 +28,18 @@ public class RedissonLockTest {
     @Autowired
     private RedissonClient redissonClient;
     
+    /**
+     * 检查 redisson 是否配置成功
+     */
     @Test
     public void worked() {
         Assert.assertNotNull("没有配置成功", redissonClient);
     }
     
+    /**
+     * redisson 锁
+     * @throws InterruptedException
+     */
     @Test
     public void testLock() throws InterruptedException {
         RLock lock = redissonClient.getLock("lock");

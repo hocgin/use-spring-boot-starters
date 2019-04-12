@@ -24,6 +24,10 @@ public class CachingServiceTest {
     @Autowired
     private CachingService cachingService;
     
+    /**
+     * 读取缓存
+     * @throws InterruptedException
+     */
     @Test
     public void readCache() throws InterruptedException {
         LocalDateTime first = cachingService.readCache();
@@ -35,6 +39,9 @@ public class CachingServiceTest {
         Assert.assertEquals("没有从缓存中读取", first.toString(), second.toString());
     }
     
+    /**
+     * 更新缓存
+     */
     @Test
     public void updateCache() {
         LocalDateTime first = cachingService.readCache();
@@ -48,6 +55,9 @@ public class CachingServiceTest {
     }
     
     
+    /**
+     * 删除缓存
+     */
     @Test
     public void deleteCache() {
         LocalDateTime first = cachingService.readCache();
