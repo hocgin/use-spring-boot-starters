@@ -1,0 +1,11 @@
+version: "2"
+services:
+  redis:
+    container_name: 'spring-boot-redis'
+    image: redis
+    environment:
+      TZ: Asia/Shanghai
+    ports:
+      - 6379:6379
+    restart: always
+    command: --requirepass "hocgin"

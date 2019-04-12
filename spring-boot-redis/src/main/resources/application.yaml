@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: spring-boot-redis
+  redis:
+    host: redis.hocgin.dev
+    port: 6379
+#    password: hocgin
+    timeout: 100ms
+logging:
+  level:
+    in.hocg: debug
