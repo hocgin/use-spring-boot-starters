@@ -1,4 +1,4 @@
-package in.hocg.redis;
+package in.hocg.redis.cache;
 
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.CacheEvict;
