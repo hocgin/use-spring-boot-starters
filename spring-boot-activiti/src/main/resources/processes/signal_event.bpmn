@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn"
+             expressionLanguage="http://www.w3.org/1999/XPath" id="m1554798900657" name=""
+             targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+    <!--定义信号-->
+    <signal id="signal" name="信号"/>
+
+    <process id="signal_event" isClosed="false" isExecutable="true" name="信号事件" processType="None">
+        <startEvent id="start" name="开始">
+            <!--指定信号-->
+            <signalEventDefinition id="signal_definition" signalRef="signal"/>
+        </startEvent>
+        <endEvent id="end" name="结束"/>
+
+        <serviceTask activiti:class="in.hocg.activiti.task.HandlerMessageJavaDelegate"
+                     activiti:exclusive="true"
+                     id="handler" name="处理信号消息"/>
+
+        <sequenceFlow id="_4" sourceRef="start" targetRef="handler"/>
+        <sequenceFlow id="_71" sourceRef="handler" targetRef="end"/>
+    </process>
+</definitions>

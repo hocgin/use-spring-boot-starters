@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath"
+             id="m1554798900657" name="" targetNamespace="http://www.activiti.org/test"
+             typeLanguage="http://www.w3.org/2001/XMLSchema">
+    <signal activiti:scope="processInstance" id="esignal" name="信号"/>
+    <process id="signal_throw_catch" isClosed="false" isExecutable="true" name="信号事件" processType="None">
+
+        <startEvent id="starts" name="开始"/>
+
+        <subProcess id="sub" name="子流程">
+            <startEvent id="start" name="抛出开始"/>
+            <scriptTask activiti:exclusive="true" activiti:resultVariable="ret"
+                        id="script1" name="脚本任务1"
+                        scriptFormat="javascript">
+                <script><![CDATA[1+1]]></script>
+            </scriptTask>
+            <intermediateThrowEvent id="throwEvent" name="抛出信号">
+                <signalEventDefinition id="throwEvent_ED_1" signalRef="esignal"/>
+            </intermediateThrowEvent>
+            <endEvent id="end" name="抛出结束"/>
+            <sequenceFlow id="_1" sourceRef="start" targetRef="script1"/>
+            <sequenceFlow id="_2" sourceRef="script1" targetRef="throwEvent"/>
+            <sequenceFlow id="_3" sourceRef="throwEvent" targetRef="end"/>
+
+            <subProcess id="catchSub" triggeredByEvent="true">
+                <startEvent id="catchEvent" name="捕获信号">
+                    <signalEventDefinition activiti:async="true" id="catchEvent_ED_1" signalRef="esignal"/>
+                </startEvent>
+                <scriptTask activiti:exclusive="true" activiti:resultVariable="ret" id="script2" name="脚本任务2"
+                            scriptFormat="javascript">
+                    <script><![CDATA[1+1]]></script>
+                </scriptTask>
+                <endEvent id="end2" name="捕获结束"/>
+                <sequenceFlow id="_11" sourceRef="catchEvent" targetRef="script2"/>
+                <sequenceFlow id="_22" sourceRef="script2" targetRef="end2"/>
+            </subProcess>
+        </subProcess>
+        <endEvent id="ends" name="结束"/>
+
+        <sequenceFlow id="_111" sourceRef="starts" targetRef="sub"/>
+        <sequenceFlow id="_2222" sourceRef="sub" targetRef="ends"/>
+    </process>
+</definitions>

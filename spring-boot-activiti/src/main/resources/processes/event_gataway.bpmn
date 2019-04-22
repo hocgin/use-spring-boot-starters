@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1554798900657" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <message id="m2" name="m2"/>
+  <signal activiti:scope="processInstance" id="signala" name="signala"/>
+  <process id="event_gateway" isClosed="false" isExecutable="true" name="事件网关" processType="None">
+    <startEvent id="start" name="开始"/>
+    <eventBasedGateway eventGatewayType="Exclusive" gatewayDirection="Unspecified" id="eventBasedGateway" instantiate="false" name="事件网关"/>
+    <intermediateCatchEvent id="intermediateCatchEvent" name="消息捕获">
+      <messageEventDefinition id="intermediateCatchEvent_ED_1" messageRef="m2"/>
+    </intermediateCatchEvent>
+    <intermediateCatchEvent id="intermediateCatchEventsignala" name="信号捕获">
+      <signalEventDefinition id="intermediateCatchEventsignala_ED_1" signalRef="signala"/>
+    </intermediateCatchEvent>
+    <scriptTask activiti:exclusive="true" activiti:resultVariable="ret" id="script1" name="脚本任务1" scriptFormat="javascript">
+      <script><![CDATA[1+1]]></script>
+    </scriptTask>
+    <scriptTask activiti:exclusive="true" activiti:resultVariable="ret" id="script2" name="脚本任务2" scriptFormat="javascript">
+      <script><![CDATA[1+1]]></script>
+    </scriptTask>
+    <endEvent id="end" name="结束"/>
+    <sequenceFlow id="_712" sourceRef="start" targetRef="eventBasedGateway"/>
+    <sequenceFlow id="_12" sourceRef="eventBasedGateway" targetRef="intermediateCatchEvent"/>
+    <sequenceFlow id="_122" sourceRef="eventBasedGateway" targetRef="intermediateCatchEventsignala"/>
+    <sequenceFlow id="_1212" sourceRef="intermediateCatchEvent" targetRef="script2"/>
+    <sequenceFlow id="_12c" sourceRef="intermediateCatchEventsignala" targetRef="script1"/>
+    <sequenceFlow id="_12cscript2" sourceRef="script1" targetRef="end"/>
+    <sequenceFlow id="_71" sourceRef="script2" targetRef="end"/>
+  </process>
+  <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
+    <bpmndi:BPMNPlane bpmnElement="event_gateway">
+      <bpmndi:BPMNShape bpmnElement="end" id="Shape-end">
+        <dc:Bounds height="32.0" width="32.0" x="441.0" y="152.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="script2" id="Shape-script2">
+        <dc:Bounds height="55.0" width="85.0" x="296.0" y="141.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="script1" id="Shape-script1">
+        <dc:Bounds height="55.0" width="85.0" x="296.0" y="236.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="intermediateCatchEventsignala" id="Shape-intermediateCatchEventsignala">
+        <dc:Bounds height="32.0" width="32.0" x="204.0" y="247.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="intermediateCatchEvent" id="Shape-intermediateCatchEvent">
+        <dc:Bounds height="32.0" width="32.0" x="204.0" y="152.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="eventBasedGateway" id="Shape-eventBasedGateway">
+        <dc:Bounds height="32.0" width="32.0" x="112.0" y="200.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="start" id="Shape-start">
+        <dc:Bounds height="32.0" width="32.0" x="20.0" y="200.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_12" id="BPMNEdge__12" sourceElement="eventBasedGateway" targetElement="intermediateCatchEvent">
+        <di:waypoint x="144.0" y="216.0"/>
+        <di:waypoint x="204.00781440828052" y="168.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_12c" id="BPMNEdge__12c" sourceElement="intermediateCatchEventsignala" targetElement="script1">
+        <di:waypoint x="235.99218559171948" y="263.5"/>
+        <di:waypoint x="296.0" y="263.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_1212" id="BPMNEdge__1212" sourceElement="intermediateCatchEvent" targetElement="script2">
+        <di:waypoint x="235.99218559171948" y="168.5"/>
+        <di:waypoint x="296.0" y="168.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_712" id="BPMNEdge__712" sourceElement="start" targetElement="eventBasedGateway">
+        <di:waypoint x="52.0" y="216.0"/>
+        <di:waypoint x="112.0" y="216.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_12cscript2" id="BPMNEdge__12cscript2" sourceElement="script1" targetElement="end">
+        <di:waypoint x="381.0" y="263.5"/>
+        <di:waypoint x="441.0078144082805" y="168.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_71" id="BPMNEdge__71" sourceElement="script2" targetElement="end">
+        <di:waypoint x="381.0" y="168.5"/>
+        <di:waypoint x="441.0078144082805" y="168.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_122" id="BPMNEdge__122" sourceElement="eventBasedGateway" targetElement="intermediateCatchEventsignala">
+        <di:waypoint x="144.0" y="216.0"/>
+        <di:waypoint x="204.00781440828052" y="263.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

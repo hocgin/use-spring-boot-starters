@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1554798900657" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <message id="m2" name="m2"/>
+  <process id="parallel_gateway" isClosed="false" isExecutable="true" name="事件网关" processType="None">
+    <startEvent id="start" name="开始"/>
+    <parallelGateway id="parallelGateway" name="并行网关"/>
+
+    <scriptTask activiti:exclusive="true" activiti:resultVariable="ret" id="script1" name="脚本任务1" scriptFormat="javascript">
+      <script><![CDATA[1+1]]></script>
+    </scriptTask>
+    <scriptTask activiti:exclusive="true" activiti:resultVariable="ret" id="script2" name="脚本任务2" scriptFormat="javascript">
+      <script><![CDATA[1+1]]></script>
+    </scriptTask>
+    <endEvent id="end" name="结束"/>
+    
+    <sequenceFlow id="_712" sourceRef="start" targetRef="parallelGateway"/>
+    <sequenceFlow id="_12" sourceRef="parallelGateway" targetRef="script1"/>
+    <sequenceFlow id="_122" sourceRef="parallelGateway" targetRef="script2"/>
+    <sequenceFlow id="_12cscript2" sourceRef="script1" targetRef="end"/>
+    <sequenceFlow id="_71" sourceRef="script2" targetRef="end"/>
+  </process>
+</definitions>

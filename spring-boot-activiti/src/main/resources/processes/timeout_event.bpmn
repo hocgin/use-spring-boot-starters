@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1554798900657" name="" targetNamespace="http://www.activiti.org/test" 
+typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <process id="timeout_event" isClosed="false" isExecutable="true" name="超时事件" processType="None">
+    <startEvent id="start" name="开始"/>
+    <endEvent id="end" name="结束"/>
+    <userTask activiti:exclusive="true" id="_4" name="UserTask"/>
+    <serviceTask activiti:class="in.hocg.activiti.task.TimeoutJavaDelegate" activiti:exclusive="true" id="_21" name="超时任务"/>
+    <boundaryEvent attachedToRef="_4" cancelActivity="true" id="timeout_boundary" name="超时处理">
+      <timerEventDefinition id="timeout_boundary_ED_1">
+        <timeDuration><![CDATA[PT3S]]></timeDuration>
+      </timerEventDefinition>
+    </boundaryEvent>
+    <sequenceFlow id="_5" sourceRef="start" targetRef="_4"/>
+    <sequenceFlow id="_6" sourceRef="_4" targetRef="end"/>
+    <sequenceFlow id="_7" sourceRef="timeout_boundary" targetRef="_21"/>
+    <sequenceFlow id="_71" sourceRef="_21" targetRef="end"/>
+  </process>
+  <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
+    <bpmndi:BPMNPlane bpmnElement="timeout_event">
+      <bpmndi:BPMNShape bpmnElement="_21" id="Shape-_21">
+        <dc:Bounds height="55.0" width="85.0" x="210.0" y="355.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="_4" id="Shape-_4">
+        <dc:Bounds height="55.0" width="85.0" x="112.0" y="188.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end" id="Shape-end">
+        <dc:Bounds height="32.0" width="32.0" x="402.0" y="295.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="start" id="Shape-start">
+        <dc:Bounds height="32.0" width="32.0" x="20.0" y="200.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="timeout_boundary" id="Shape-timeout_boundary">
+        <dc:Bounds height="32.0" width="32.0" x="156.75" y="227.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="1.0" x="44.75" y="-16.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="_5" id="BPMNEdge__5" sourceElement="start" targetElement="_4">
+        <di:waypoint x="52.0" y="216.0"/>
+        <di:waypoint x="112.0" y="216.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_6" id="BPMNEdge__6" sourceElement="_4" targetElement="end">
+        <di:waypoint x="197.0" y="216.0"/>
+        <di:waypoint x="402.0" y="311.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_7" id="BPMNEdge__7" sourceElement="timeout_boundary" targetElement="_21">
+        <di:waypoint x="188.99218559171948" y="243.5"/>
+        <di:waypoint x="210.0" y="383.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_71" id="BPMNEdge__71" sourceElement="_21" targetElement="end">
+        <di:waypoint x="295.0" y="383.0"/>
+        <di:waypoint x="402.0" y="311.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

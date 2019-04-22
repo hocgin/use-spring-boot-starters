@@ -13,13 +13,15 @@
         <module>spring-boot-redis</module>
         <module>spring-boot-jpa</module>
         <module>spring-boot-xxljob</module>
-        <!--<module>spring-boot-skywalking</module>-->
         <module>spring-boot-elk</module>
         <module>spring-boot-elasticsearch</module>
         <module>spring-boot-apollo</module>
+        <module>spring-boot-activiti</module>
+        <module>spring-boot-skywalking</module>
     </modules>
 
     <properties>
+        <java.version>1.8</java.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 

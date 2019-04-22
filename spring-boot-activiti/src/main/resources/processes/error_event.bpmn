@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:tns="http://www.activiti.org/test" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" expressionLanguage="http://www.w3.org/1999/XPath" id="m1554798900657" name="" targetNamespace="http://www.activiti.org/test" typeLanguage="http://www.w3.org/2001/XMLSchema">
+  <error errorCode="custom_error_code" id="customError"/>
+  <process id="error_event" isClosed="false" isExecutable="true" name="错误事件" processType="None">
+    <startEvent id="start" name="开始"/>
+    <subProcess activiti:exclusive="true" id="sub_process" name="子流程" triggeredByEvent="false">
+      <startEvent id="sub_start" name="子开始"/>
+      <endEvent id="sub_end" name="子结束">
+        <errorEventDefinition errorRef="customError" id="error"/>
+      </endEvent>
+      <sequenceFlow id="sub_start__sub_end" sourceRef="sub_start" targetRef="sub_end"/>
+    </subProcess>
+    <endEvent id="end" name="结束"/>
+    <boundaryEvent attachedToRef="sub_process" cancelActivity="true" id="boundaryEvent" name="边界事件">
+      <errorEventDefinition errorRef="customError" id="boundaryEvent_ED_1"/>
+    </boundaryEvent>
+    <serviceTask activiti:class="in.hocg.activiti.task.HandlerErrorJavaDelegate" activiti:exclusive="true" id="handler_error" name="处理错误"/>
+    <sequenceFlow id="_4" sourceRef="start" targetRef="sub_process"/>
+    <sequenceFlow id="_5" sourceRef="sub_process" targetRef="end"/>
+    <sequenceFlow id="_7" sourceRef="boundaryEvent" targetRef="handler_error"/>
+    <sequenceFlow id="_71" sourceRef="handler_error" targetRef="end"/>
+  </process>
+  <bpmndi:BPMNDiagram documentation="background=#FFFFFF;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
+    <bpmndi:BPMNPlane bpmnElement="error_event">
+      <bpmndi:BPMNShape bpmnElement="handler_error" id="Shape-handler_error">
+        <dc:Bounds height="55.0" width="85.0" x="310.0" y="355.5"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="end" id="Shape-end">
+        <dc:Bounds height="32.0" width="32.0" x="467.0" y="295.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sub_process" id="Shape-sub_process" isExpanded="true">
+        <dc:Bounds height="200.0" width="150.0" x="112.0" y="116.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="200.0" width="150.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="start" id="Shape-start">
+        <dc:Bounds height="32.0" width="32.0" x="20.0" y="200.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sub_end" id="Shape-sub_end">
+        <dc:Bounds height="32.0" width="32.0" x="217.0" y="220.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="sub_start" id="Shape-sub_start">
+        <dc:Bounds height="32.0" width="32.0" x="125.0" y="220.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="boundaryEvent" id="Shape-boundaryEvent">
+        <dc:Bounds height="32.0" width="32.0" x="166.5" y="300.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="0.0" width="1.0" x="54.5" y="-16.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="sub_start__sub_end" id="BPMNEdge_sub_start__sub_end" sourceElement="sub_start" targetElement="sub_end">
+        <di:waypoint x="157.0" y="236.0"/>
+        <di:waypoint x="217.0" y="236.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_4" id="BPMNEdge__4" sourceElement="start" targetElement="sub_process">
+        <di:waypoint x="52.0" y="216.0"/>
+        <di:waypoint x="112.0" y="216.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_5" id="BPMNEdge__5" sourceElement="sub_process" targetElement="end">
+        <di:waypoint x="262.0" y="216.0"/>
+        <di:waypoint x="467.0" y="311.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_7" id="BPMNEdge__7" sourceElement="boundaryEvent" targetElement="handler_error">
+        <di:waypoint x="199.0" y="316.0"/>
+        <di:waypoint x="310.0" y="383.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_71" id="BPMNEdge__71" sourceElement="handler_error" targetElement="end">
+        <di:waypoint x="395.0" y="383.0"/>
+        <di:waypoint x="467.0" y="311.0"/>
+        <bpmndi:BPMNLabel>
+          <dc:Bounds height="-1.0" width="-1.0" x="-1.0" y="-1.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>
