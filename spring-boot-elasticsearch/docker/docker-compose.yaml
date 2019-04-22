@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  elasticsearch-service:
+    image: elasticsearch:6.6.2
+    container_name: elasticsearch
+    environment:
+    - TZ=Asia/Shanghai
+    - xpack.security.enabled=false
+    - discovery.type=single-node
+    - cluster.name=CollectorDBCluster
+    ports:
+    - 9200:9200
+    - 9300:9300
+    restart: always

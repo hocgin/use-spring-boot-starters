@@ -15,6 +15,7 @@
         <module>spring-boot-xxljob</module>
         <!--<module>spring-boot-skywalking</module>-->
         <module>spring-boot-elk</module>
+        <module>spring-boot-elasticsearch</module>
     </modules>
 
     <properties>

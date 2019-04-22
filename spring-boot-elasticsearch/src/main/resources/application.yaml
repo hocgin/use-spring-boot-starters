@@ -1,0 +1,16 @@
+debug: true
+# 使用 `ElasticSearchConfig.class` 进行了配置
+#spring:
+#  data:
+#    elasticsearch:
+#      cluster-name: elasticsearch_hocgin
+#      cluster-nodes: 127.0.0.1:9300
+
+# 开启执行语句的日志
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          elasticsearch:
+            core: DEBUG
