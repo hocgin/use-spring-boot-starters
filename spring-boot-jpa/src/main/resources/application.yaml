@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://mysql.hocgin.dev:3306/db_test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: hocgin
+    driver-class-name: org.mariadb.jdbc.Driver
+    druid:
+      validation-query: select '1'
+      web-stat-filter:
+        enabled: true
+        url-pattern: /druid
+      stat-view-servlet:
+        enabled: true
+        login-username: hocgin
+        login-password: hocgin
+  jpa:
+    show-sql: true
+    open-in-view: false
