@@ -1,0 +1,3 @@
+app.id: test1
+apollo.meta: http://apollo.hocgin.dev:8080
+server.port: 8022
