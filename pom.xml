@@ -18,6 +18,7 @@
         <module>spring-boot-apollo</module>
         <module>spring-boot-activiti</module>
         <module>spring-boot-skywalking</module>
+        <module>spring-boot-mybatisplus</module>
     </modules>
 
     <properties>
@@ -89,6 +90,11 @@
         <dependencies>
             <!--第一方-->
             <!--第三方-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.1.1</version>
+            </dependency>
             <dependency>
                 <groupId>net.logstash.logback</groupId>
                 <artifactId>logstash-logback-encoder</artifactId>
