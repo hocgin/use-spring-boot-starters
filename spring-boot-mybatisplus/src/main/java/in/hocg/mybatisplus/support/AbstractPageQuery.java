@@ -1,4 +1,4 @@
-package in.hocg.mybatis.support;
+package in.hocg.mybatisplus.support;
 
 import lombok.Data;
 

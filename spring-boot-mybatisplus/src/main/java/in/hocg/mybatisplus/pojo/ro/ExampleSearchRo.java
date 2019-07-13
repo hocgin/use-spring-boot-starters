@@ -1,4 +1,4 @@
-package in.hocg.mybatis.pojo.ro;
+package in.hocg.mybatisplus.pojo.ro;
 
 import lombok.Data;
 

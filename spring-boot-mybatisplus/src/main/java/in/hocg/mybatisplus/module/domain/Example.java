@@ -1,4 +1,4 @@
-package in.hocg.mybatis.module.domain;
+package in.hocg.mybatisplus.module.domain;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

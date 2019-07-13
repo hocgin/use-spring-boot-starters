@@ -1,11 +1,11 @@
-package in.hocg.mybatis.module.service;
+package in.hocg.mybatisplus.module.service;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
-import in.hocg.mybatis.module.domain.Example;
-import in.hocg.mybatis.pojo.ro.ExampleSearchRo;
-import in.hocg.mybatis.pojo.vo.ExampleVo;
-import in.hocg.mybatis.support.PageQuery;
+import in.hocg.mybatisplus.module.domain.Example;
+import in.hocg.mybatisplus.pojo.ro.ExampleSearchRo;
+import in.hocg.mybatisplus.pojo.vo.ExampleVo;
+import in.hocg.mybatisplus.support.PageQuery;
 
 /**
  * Created by hocgin on 2019/5/25.

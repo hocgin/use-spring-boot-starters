@@ -1,4 +1,4 @@
-package in.hocg.mybatis.support;
+package in.hocg.mybatisplus.support;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;

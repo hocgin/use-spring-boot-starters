@@ -1,10 +1,10 @@
-package in.hocg.mybatis.module.mapper;
+package in.hocg.mybatisplus.module.mapper;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import in.hocg.mybatis.module.domain.Example;
-import in.hocg.mybatis.pojo.vo.ExampleVo;
+import in.hocg.mybatisplus.module.domain.Example;
+import in.hocg.mybatisplus.pojo.vo.ExampleVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.Optional;

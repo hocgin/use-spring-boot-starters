@@ -1,4 +1,4 @@
-package in.hocg.mybatis.web;
+package in.hocg.mybatisplus.web;
 
 import com.google.common.collect.Maps;
 import lombok.extern.slf4j.Slf4j;

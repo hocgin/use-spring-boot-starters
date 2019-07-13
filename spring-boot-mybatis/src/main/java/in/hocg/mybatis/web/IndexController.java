@@ -21,9 +21,7 @@ import javax.validation.Valid;
  */
 @RequestMapping
 @RestController
-@AllArgsConstructor
 public class IndexController {
-    private final ExampleService service;
     
     
     @PostMapping("_search")

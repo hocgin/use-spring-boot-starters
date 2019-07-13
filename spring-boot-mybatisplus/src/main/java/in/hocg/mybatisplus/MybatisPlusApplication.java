@@ -1,4 +1,4 @@
-package in.hocg.mybatis;
+package in.hocg.mybatisplus;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

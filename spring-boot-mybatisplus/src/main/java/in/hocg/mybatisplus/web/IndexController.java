@@ -1,10 +1,10 @@
-package in.hocg.mybatis.web;
+package in.hocg.mybatisplus.web;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import in.hocg.mybatis.module.service.ExampleService;
-import in.hocg.mybatis.pojo.ro.ExampleSearchRo;
-import in.hocg.mybatis.pojo.vo.ExampleVo;
-import in.hocg.mybatis.support.PageQuery;
+import in.hocg.mybatisplus.module.service.ExampleService;
+import in.hocg.mybatisplus.pojo.ro.ExampleSearchRo;
+import in.hocg.mybatisplus.pojo.vo.ExampleVo;
+import in.hocg.mybatisplus.support.PageQuery;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

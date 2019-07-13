@@ -1,4 +1,4 @@
-package in.hocg.mybatis.pojo.vo;
+package in.hocg.mybatisplus.pojo.vo;
 
 import lombok.Data;
 import lombok.ToString;
