@@ -13,8 +13,3 @@ spring:
       test-while-idle: true
   profiles:
     active: dev
-
-mybatis-plus:
-  mapper-locations: classpath:/mapper/*Mapper.xml
-  global-config:
-    banner: false
