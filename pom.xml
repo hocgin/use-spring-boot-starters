@@ -19,6 +19,7 @@
         <module>spring-boot-activiti</module>
         <module>spring-boot-skywalking</module>
         <module>spring-boot-mybatisplus</module>
+        <module>spring-boot-mybatis</module>
     </modules>
 
     <properties>
@@ -131,6 +132,11 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>1.2.56</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.0.1</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
