@@ -20,6 +20,7 @@
         <module>spring-boot-skywalking</module>
         <module>spring-boot-mybatisplus</module>
         <module>spring-boot-mybatis</module>
+        <module>spring-boot-log</module>
     </modules>
 
     <properties>
@@ -37,10 +38,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
