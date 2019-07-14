@@ -10,5 +10,6 @@
     <select id="findFirst" resultType="in.hocg.mybatis.module.domain.Example">
         SELECT te.*
         FROM t_example te
+        LIMIT 1
     </select>
 </mapper>

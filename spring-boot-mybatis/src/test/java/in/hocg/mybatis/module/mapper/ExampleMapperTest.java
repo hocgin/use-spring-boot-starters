@@ -26,7 +26,7 @@ public class ExampleMapperTest {
     @Test
     public void page() {
         Optional<Example> first = mapper.findFirst();
-        log.debug(" {}", first);
+        log.debug("执行结果: {}", first);
     }
     
     @Test

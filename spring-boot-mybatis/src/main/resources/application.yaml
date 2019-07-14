@@ -13,3 +13,5 @@ spring:
       test-while-idle: true
   profiles:
     active: dev
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
