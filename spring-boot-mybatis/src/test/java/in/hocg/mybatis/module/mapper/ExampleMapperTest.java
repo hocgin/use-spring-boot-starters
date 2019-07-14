@@ -30,9 +30,18 @@ public class ExampleMapperTest {
     }
     
     @Test
-    public void save() {
+    public void insertOne() {
         Example example = new Example();
-        
+        example.setId(100L);
+        int x = mapper.insertOne(example);
+        System.out.println(x);
+    }
+    
+    @Test
+    public void insertOneTest() {
+        Example example = new Example();
+        example.setId(100L);
+        mapper.insertOneTest(example);
     }
     
 }

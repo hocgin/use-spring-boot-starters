@@ -1,5 +1,6 @@
 package in.hocg.mybatis.module.mapper;
 
+import in.hocg.mybatis.base.InsertOneMapper;
 import in.hocg.mybatis.module.domain.Example;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -12,7 +13,7 @@ import java.util.Optional;
  * @author hocgin
  */
 @Mapper
-public interface ExampleMapper {
+public interface ExampleMapper extends InsertOneMapper {
     
     
     /**
