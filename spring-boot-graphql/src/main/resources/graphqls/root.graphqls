@@ -1,3 +1,7 @@
 type Query {
     findAll: [Example]
 }
+
+type Mutation {
+    addExample(title: String!) :Example!
+}
