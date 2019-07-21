@@ -1,14 +1,14 @@
 # -- 查询
 type Query {
-    findAll: [Example]
+    findAll: [Example!]
 }
 
 # -- 增/改/删
 type Mutation {
-    addExample(title: String!) :Example!
+    addExample(title: String!): Example!
 }
 
 # -- 订阅
 type Subscription {
-    sub(id: ID!): Example!
+    subs(code: String!): DataWrapper!
 }
