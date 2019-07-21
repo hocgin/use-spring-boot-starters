@@ -24,7 +24,6 @@ public class ExampleQueryResolver implements GraphQLQueryResolver {
         example.setId(1L).setTitle("title");
         
         
-        
         return Arrays.asList(example);
     }
 }

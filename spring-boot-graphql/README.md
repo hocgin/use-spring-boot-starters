@@ -19,6 +19,14 @@ mutation {
   }
 }
 ```
+### Subscription
+```graphql
+subscription {
+  subs(code: "110") {
+    data
+  }
+}
+```
 
 ## 基础知识
 ### 基本语法
@@ -60,7 +68,11 @@ mutation {
 ```
 - 订阅
 > 订阅代表的是将数据推送出去的流的模式
-
-
-### 定义视图(Schema)
-- 
+```graphql
+subscription {
+  # 动作(参数) { 指定响应字段 }
+  subs(code: "110") {
+    data
+  }
+}
+```
