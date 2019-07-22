@@ -1,0 +1,8 @@
+type Example {
+    id: ID!
+    title: String
+}
+
+type DataWrapper {
+    data: String
+}
