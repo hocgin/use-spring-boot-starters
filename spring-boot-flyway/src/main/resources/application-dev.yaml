@@ -1,0 +1,3 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://mysql.hocgin.dev:3306/db_flyaway_dev?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true

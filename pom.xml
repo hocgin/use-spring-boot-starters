@@ -22,6 +22,7 @@
         <module>spring-boot-graphql</module>
         <module>spring-boot-mybatis</module>
         <module>spring-boot-log</module>
+        <module>spring-boot-flyway</module>
     </modules>
 
     <properties>
