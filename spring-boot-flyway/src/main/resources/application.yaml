@@ -17,3 +17,4 @@ spring:
     enabled: true
     baseline-on-migrate: true
     out-of-order: true
+debug: true
