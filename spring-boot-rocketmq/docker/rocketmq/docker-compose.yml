@@ -1,0 +1,34 @@
+version: '2'
+services:
+  namesrv:
+    image: rocketmqinc/rocketmq:4.4.0
+    container_name: rmqnamesrv
+    ports:
+    - 9876:9876
+    volumes:
+    - ./data/namesrv/logs:/opt/logs
+    - ./data/namesrv/store:/opt/store
+    command: sh mqnamesrv
+  broker:
+    image: rocketmqinc/rocketmq:4.4.0
+    container_name: rmqbroker
+    ports:
+    - 10909:10909
+    - 10911:10911
+    volumes:
+    - ./data/broker/logs:/opt/logs
+    - ./data/broker/store:/opt/store
+    - ./data/broker/conf:/opt/conf
+    command: sh mqbroker -n namesrv:9876 -c /opt/conf/broker.properties autoCreateTopicEnable=true
+    depends_on:
+    - namesrv
+  console:
+    image: styletang/rocketmq-console-ng
+    container_name: rmqconsole
+    ports:
+    - 18080:8080
+    environment:
+    - JAVA_OPTS=-Drocketmq.namesrv.addr=namesrv:9876
+    depends_on:
+    - namesrv
+
