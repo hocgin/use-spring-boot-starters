@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mariadb://mysql.hocgin.dev:3306/db_flyaway_dev?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: hocgin
+    driver-class-name: org.mariadb.jdbc.Driver
+    druid:
+      validation-query: select '1'
+      web-stat-filter:
+        enabled: true
+        url-pattern: /druid
+      stat-view-servlet:
+        enabled: true
+        login-username: hocgin
+        login-password: hocgin
+      filter:
+        wall:
+          config:
+            variant-check: false
+            none-base-statement-allow: true
+            comment-allow: true
+            multi-statement-allow: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    out-of-order: true
+  profiles:
+    active: local
+debug: true
