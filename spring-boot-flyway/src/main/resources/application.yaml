@@ -13,8 +13,17 @@ spring:
         enabled: true
         login-username: hocgin
         login-password: hocgin
+      filter:
+        wall:
+          config:
+            variant-check: false
+            none-base-statement-allow: true
+            comment-allow: true
+            multi-statement-allow: true
   flyway:
     enabled: true
     baseline-on-migrate: true
     out-of-order: true
+  profiles:
+    active: local
 debug: true
