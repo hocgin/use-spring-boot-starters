@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:mariadb://mysql.hocgin.dev:3306/db_test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:p6spy:mariadb://mysql.hocgin.dev:3306/db_test?useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: root
     password: hocgin
-    driver-class-name: org.mariadb.jdbc.Driver
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
     druid:
       validation-query: select '1'
       web-stat-filter:
@@ -16,3 +16,5 @@ spring:
   jpa:
     show-sql: true
     open-in-view: false
+    hibernate:
+      ddl-auto: update

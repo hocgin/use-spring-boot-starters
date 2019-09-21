@@ -1,7 +1,8 @@
-package in.hocg.log;
+package in.hocg.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * Created by hocgin on 2019/4/22.
@@ -9,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author hocgin
  */
+@EnableJpaAuditing
 @SpringBootApplication
 public class JpaApplication {
     
