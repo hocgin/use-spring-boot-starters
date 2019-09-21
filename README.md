@@ -11,3 +11,4 @@
 - [spring-boot-mybatisplus](./spring-boot-mybatisplus)
 - [spring-boot-skywalking](./spring-boot-skywalking)
 - [spring-boot-xxljob](./spring-boot-xxljob)
+- [spring-boot-rabbitmq](./spring-boot-rabbitmq)
