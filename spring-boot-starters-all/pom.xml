@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spring-boot-starters-parent</artifactId>
+        <groupId>in.hocg</groupId>
+        <version>${revision}</version>
+        <relativePath>../spring-boot-starters-parent/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+
+    <artifactId>spring-boot-starters-all</artifactId>
+
+    <modules>
+        <module>spring-boot-redis</module>
+        <module>spring-boot-jpa</module>
+        <module>spring-boot-xxljob</module>
+        <module>spring-boot-elk</module>
+        <module>spring-boot-elasticsearch</module>
+        <module>spring-boot-apollo</module>
+        <module>spring-boot-activiti</module>
+        <module>spring-boot-skywalking</module>
+        <module>spring-boot-mybatisplus</module>
+        <module>spring-boot-graphql</module>
+        <module>spring-boot-mybatis</module>
+        <module>spring-boot-log</module>
+        <module>spring-boot-flyway</module>
+        <module>spring-boot-rabbitmq</module>
+        <module>spring-boot-rabbitmq2</module>
+        <module>spring-boot-rocketmq</module>
+    </modules>
+
+</project>
