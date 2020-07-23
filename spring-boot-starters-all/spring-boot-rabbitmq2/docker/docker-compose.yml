@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    ports:
+      # 控制台端口号
+      - "15672:15672"
+      # 应用访问端口号
+      - "5672:5672"
+      - "25672"
+      - "61613"
+      - "1883"

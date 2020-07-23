@@ -28,6 +28,7 @@
         <module>spring-boot-log</module>
         <module>spring-boot-flyway</module>
         <module>spring-boot-rabbitmq</module>
+        <module>spring-boot-rabbitmq2</module>
         <module>spring-boot-rocketmq</module>
     </modules>
 

@@ -8,7 +8,10 @@ spring:
     port: 5672
     username: guest
     password: guest
-    virtual-host: /
+    publisher-confirms: true
+    cache:
+      channel:
+        size: 40
   cloud:
     stream:
       bindings:
@@ -22,6 +25,7 @@ spring:
         MQ_PACKAGE_OUTPUT:
           # 绑定消息交换机(Exchange)
           destination: ${spring.profiles.active}.mq.package
+          group: ${spring.application.name}
 logging:
   level:
     in.hocg: debug

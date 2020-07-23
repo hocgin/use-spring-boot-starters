@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: default
+  application:
+    name: rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    cache:
+      channel:
+        size: 40
+logging:
+  level:
+    in.hocg: debug
