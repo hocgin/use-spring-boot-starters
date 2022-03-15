@@ -30,6 +30,7 @@
         <module>spring-boot-rabbitmq</module>
         <module>spring-boot-rabbitmq2</module>
         <module>spring-boot-rocketmq</module>
+        <module>spring-boot-javers</module>
     </modules>
 
 </project>
